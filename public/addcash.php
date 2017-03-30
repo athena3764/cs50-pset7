@@ -1,6 +1,6 @@
 <?php
     
-    // configuration
+    //configuration
     require("../includes/config.php");
     
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET"){
     render("addcash_form.php", ["title" => "Add Cash"]);
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    //check if the user enters the number.
+    
+    //check if the user enters a number.
     if (empty($_POST["money"])){
         apologize("You must enter a number.");
     }
