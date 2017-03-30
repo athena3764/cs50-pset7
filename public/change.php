@@ -30,7 +30,7 @@
         CS50::query("UPDATE users SET hash = ? WHERE username = ?", 
         $new_password, $_POST["username"] );
   
-        
+        //redirect the user to another page
         redirect("login.php");
         
     }
