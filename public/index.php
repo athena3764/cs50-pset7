@@ -2,15 +2,14 @@
 
     // configuration
     require("../includes/config.php"); 
- 
-   
-    // render portfolio
-$rows = CS50::query("SELECT symbol, shares FROM portfolio WHERE id = ?", $_SESSION["id"]);
-$cash = CS50::query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]); 
-
-$positions = [];
-foreach ($rows as $row)
-{
+    
+    //return a set of records from the database
+    $rows = CS50::query("SELECT symbol, shares FROM portfolio WHERE id = ?", $_SESSION["id"]);
+    $cash = CS50::query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]); 
+    
+    //store each record in an array
+    $positions = [];
+    foreach ($rows as $row){
     $stock = lookup($row["symbol"]);
     if ($stock !== false)
     {
@@ -24,7 +23,7 @@ foreach ($rows as $row)
     }
 }
 
-    // render portfolio
+    //use the render function to display the records via portfolio.php
     render("portfolio.php", ["cash" => $cash, "positions" => $positions, "title" => "Portfolio"]);
 ?>
  
