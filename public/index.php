@@ -10,6 +10,8 @@
     //declare an array
     $positions = [];
     foreach ($rows as $row){
+    
+    //return a stock by symbol
     $stock = lookup($row["symbol"]);
     if ($stock !== false)
     {   
