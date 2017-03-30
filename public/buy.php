@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     //Returns a stock by symbol 
     $stock = lookup($_POST["symbol"]);
     
-    //check if the user enters the symbol.
+    //check if the user enters a valid symbol 
     if($stock == false){
         apologize("please enter a valid symbol.");
     }
@@ -50,7 +50,7 @@ strtoupper($stock["symbol"]), $_POST["shares"]);
         CS50::query("UPDATE users SET cash = cash - ? WHERE id = ?",
         ($stock["price"] * $_POST["shares"]), $_SESSION["id"]);
         
-        //redirect the user to another page.
+        //redirect the user to another page 
         redirect("index.php"); 
       }
     } 
