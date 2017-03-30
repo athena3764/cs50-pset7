@@ -4,6 +4,7 @@
 require("../includes/config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET"){
+        
         //render form
         render("buy_form.php", ["title" => "Buy"]);
     }
