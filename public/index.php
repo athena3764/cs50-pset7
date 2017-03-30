@@ -10,11 +10,11 @@
     //declare an array
     $positions = [];
 
-    //store each record in an array
     foreach ($rows as $row){
     $stock = lookup($row["symbol"]);
     if ($stock !== false)
-    {
+    {   
+        //store each record in an array
         $positions[] = [
             "name" => $stock["name"],
             "price" => $stock["price"],
