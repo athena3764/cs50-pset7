@@ -1,14 +1,16 @@
 <?php
 
-    // configuration
+    //configuration
     require("../includes/config.php"); 
     
     //return a set of records from the database
     $rows = CS50::query("SELECT symbol, shares FROM portfolio WHERE id = ?", $_SESSION["id"]);
     $cash = CS50::query("SELECT cash FROM users WHERE id = ?", $_SESSION["id"]); 
     
-    //store each record in an array
+    //declare an array
     $positions = [];
+
+    //store each record in an array
     foreach ($rows as $row){
     $stock = lookup($row["symbol"]);
     if ($stock !== false)
