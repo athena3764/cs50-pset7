@@ -9,9 +9,12 @@
    
     $positions = [];
 
-    //stores each record in an array
     foreach($rows as $row){
+        
+        //retrieve stock 
         $stock = lookup($row["symbol"]);
+        
+        /stores each record in an array
         if ($stock !== false){
             $positions[]=[
                 "transaction" => $row["transaction"],
