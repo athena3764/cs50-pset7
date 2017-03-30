@@ -3,18 +3,18 @@
     // configuration
     require("../includes/config.php");
     
-    //returns a result set of records from the database
+    //return a result set of records from the database
     $rows = CS50::query("SELECT transaction, date_time, symbol, shares 
     FROM history WHERE id = ?", $_SESSION["id"]);
-   
+    
+    //declare an array 
     $positions = [];
-
+    
+    //store each record in an array
     foreach($rows as $row){
         
-        //retrieve stock 
-        $stock = lookup($row["symbol"]);
-        
-        /stores each record in an array
+        //return a stock by symbol 
+        $stock = lookup($row["symbol"]);   
         if ($stock !== false){
             $positions[]=[
                 "transaction" => $row["transaction"],
