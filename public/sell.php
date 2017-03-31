@@ -33,7 +33,6 @@
         
         }
         
-        
         //declare a name for transaction 
         $transaction = 'SELL';
         
