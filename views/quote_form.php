@@ -1,6 +1,5 @@
 <form action="quote.php" method="post">
     <fieldset>
-         
         <div class="form-group">
             <input autofocus class="form-control" name="quote" placeholder="stock symbol" type="search"/>
         </div>
