@@ -6,7 +6,7 @@
         <th>Price</th>
         <th>Date/Time</th>
     </tr>
-   <?php foreach ($positions as $position): ?>
+    <?php foreach ($positions as $position): ?>
     <tr>
         <td><?= $position["transaction"] ?></td>
         <td><?= $position["symbol"] ?></td>
