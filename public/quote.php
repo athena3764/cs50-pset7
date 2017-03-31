@@ -27,7 +27,7 @@
         }
         else{
             
-            //use the render function to display the record via quote.php
+            //use the render function to display records via quote.php
             render("quote.php",  ["s" => $stock]);
 
         }
